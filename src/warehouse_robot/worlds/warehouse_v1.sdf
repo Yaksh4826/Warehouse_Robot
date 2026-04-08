@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="warehouse_world">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre</render_engine>
+    </plugin>
+
+    <include><uri>https://fuel.gazebosim.org/1.0/openrobotics/models/Sun</uri></include>
+    <include><uri>https://fuel.gazebosim.org/1.0/openrobotics/models/Ground Plane</uri></include>
+
+    <model name="wall_back"><static>true</static><pose>15 20 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>30 0.2 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>30 0.2 2</size></box></geometry></visual></link>
+    </model>
+    <model name="wall_front_left"><static>true</static><pose>7 0 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>14 0.2 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry></visual></link>
+    </model>
+    <model name="wall_front_right"><static>true</static><pose>23 0 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>14 0.2 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry></visual></link>
+    </model>
+    <model name="wall_left"><static>true</static><pose>0 10 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry></visual></link>
+    </model>
+    <model name="wall_right"><static>true</static><pose>30 10 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry></visual></link>
+    </model>
+
+    <model name="aisle_1"><static>true</static><pose>10 5 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 10 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry></visual></link>
+    </model>
+    <model name="aisle_2"><static>true</static><pose>20 15 1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 10 2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry></visual></link>
+    </model>
+
+    <model name="box_1"><static>true</static><pose>5 12 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry></visual></link>
+    </model>
+    <model name="box_2"><static>true</static><pose>25 8 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry></visual></link>
+    </model>
+
+  </world>
+</sdf>
