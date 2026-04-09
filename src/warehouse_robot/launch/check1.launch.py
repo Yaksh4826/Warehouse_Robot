@@ -31,7 +31,7 @@ def generate_launch_description():
     urdf_file = os.path.join(pkg_path, 'urdf', 'robot.urdf.xacro')
 
     robot_description = ParameterValue(
-        Command(['xacro', urdf_file]),
+        Command(['xacro ', urdf_file]),
         value_type=str
     )
 
@@ -45,10 +45,11 @@ def generate_launch_description():
     # ================= SPAWN ROBOT =================
     spawn_robot = ExecuteProcess(
         cmd=[
-            'ros2', 'run', 'ros_gz_sim', 'create',
-            '-name', 'warehouse_bot',
-            '-topic', 'robot_description'
-        ],
+    'ros2', 'run', 'ros_gz_sim', 'create',
+    '-name', 'warehouse_bot',
+    '-topic', 'robot_description',
+    '-x', '0', '-y', '0', '-z', '0.5'
+],
         output='screen'
     )
 
@@ -57,10 +58,11 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'
+            '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan'
         ],
         output='screen'
     )
+    print("URDF FILE PATH:", urdf_file)
 
     return LaunchDescription([
         gazebo,

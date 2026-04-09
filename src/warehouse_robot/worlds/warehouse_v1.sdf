@@ -18,41 +18,92 @@
 
     <model name="wall_back"><static>true</static><pose>15 20 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>30 0.2 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>30 0.2 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>30 0.2 2</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 1.0 1</ambient>
+          <diffuse>0.2 0.2 1.0 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="wall_front_left"><static>true</static><pose>7 0 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>14 0.2 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 1.0 1</ambient>
+          <diffuse>0.2 0.2 1.0 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="wall_front_right"><static>true</static><pose>23 0 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>14 0.2 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>14 0.2 2</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 1.0 1</ambient>
+          <diffuse>0.2 0.2 1.0 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="wall_left"><static>true</static><pose>0 10 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 1.0 1</ambient>
+          <diffuse>0.2 0.2 1.0 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="wall_right"><static>true</static><pose>30 10 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>0.2 20 2</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 1.0 1</ambient>
+          <diffuse>0.2 0.2 1.0 1</diffuse>
+        </material>
+      </visual></link>
     </model>
 
     <model name="aisle_1"><static>true</static><pose>10 5 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>1 10 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="aisle_2"><static>true</static><pose>20 15 1 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>1 10 2</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>1 10 2</size></box></geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual></link>
     </model>
 
     <model name="box_1"><static>true</static><pose>5 12 0.5 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual></link>
     </model>
+
     <model name="box_2"><static>true</static><pose>25 8 0.5 0 0 0</pose>
       <link name="l"><collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
-      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry></visual></link>
+      <visual name="v"><geometry><box><size>1 1 1</size></box></geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual></link>
     </model>
 
   </world>
