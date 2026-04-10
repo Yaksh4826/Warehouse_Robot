@@ -2,7 +2,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, ExecuteProcess, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
@@ -23,7 +23,7 @@ def generate_launch_description():
             )
         ]),
         launch_arguments={
-            'gz_args': '-r -s ' + os.path.join(pkg_path, 'worlds', 'warehouse_v1.sdf')
+            'gz_args': '-r ' + os.path.join(pkg_path, 'worlds', 'warehouse_v1.sdf')
         }.items()
     )
 
@@ -43,15 +43,20 @@ def generate_launch_description():
     )
 
     # ================= SPAWN ROBOT =================
-    spawn_robot = ExecuteProcess(
-        cmd=[
-    'ros2', 'run', 'ros_gz_sim', 'create',
-    '-name', 'warehouse_bot',
-    '-topic', 'robot_description',
-    '-x', '0', '-y', '0', '-z', '0.5'
-],
-        output='screen'
-    )
+    spawn_robot = TimerAction(
+    period=3.0,
+    actions=[
+        ExecuteProcess(
+            cmd=[
+                'ros2', 'run', 'ros_gz_sim', 'create',
+                '-name', 'warehouse_bot',
+                '-topic', 'robot_description',
+                '-x', '0', '-y', '0', '-z', '0.5'
+            ],
+            output='screen'
+        )
+    ]
+)
 
     # ================= BRIDGE =================
     bridge = Node(

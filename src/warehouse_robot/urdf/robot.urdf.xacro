@@ -172,7 +172,7 @@
 
   <!-- ================= GAZEBO: DIFF DRIVE ================= -->
   <gazebo>
-    <plugin name="diff_drive" filename="gz-sim-diff-drive-system">
+    <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
 
