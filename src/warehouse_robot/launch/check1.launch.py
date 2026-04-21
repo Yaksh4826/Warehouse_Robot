@@ -51,7 +51,7 @@ def generate_launch_description():
                 'ros2', 'run', 'ros_gz_sim', 'create',
                 '-name', 'warehouse_bot',
                 '-topic', 'robot_description',
-                '-x', '0', '-y', '0', '-z', '0.5'
+                '-x', '6.0', '-y', '6.0', '-z', '0.18'
             ],
             output='screen'
         )
@@ -63,7 +63,10 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan'
+            '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
+            '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
+            '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+            '/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V'
         ],
         output='screen'
     )
